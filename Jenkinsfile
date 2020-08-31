@@ -12,7 +12,7 @@ pipeline {
     }
     post {
         failure {
-            slackSend channel: '#dragons-team',
+            slackSend channel: '#general',
             color: 'danger',
             message: "The pipeline ${currentBuild.fullDisplayName} failed."
         }
