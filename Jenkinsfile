@@ -16,6 +16,11 @@ pipeline {
             subject: "Failed build Pipeline: ${currentBuild.fullDisplayName}",
             body: "The pipeline ${currentBuild.fullDisplayName} failed."
         }
+        success {
+            mail to: 'team@company.com',
+            subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Your build completed, please check: ${env.BUILD_URL}"
+        }
     }
 }
 
