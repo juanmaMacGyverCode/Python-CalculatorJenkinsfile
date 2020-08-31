@@ -16,6 +16,11 @@ pipeline {
             color: 'danger',
             message: "The pipeline ${currentBuild.fullDisplayName} failed."
         }
+        success {
+            slackSend channel: '#general',
+            color: 'success',
+            message: "The pipeline ${currentBuild.fullDisplayName} success. Ustéh he uhn crah!!!"
+        }
     }
 }
 
